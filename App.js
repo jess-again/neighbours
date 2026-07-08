@@ -1,28 +1,25 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import FeedScreen from './screens/FeedScreen';
+import BulletinScreen from './screens/BulletinScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>
-        Neighbours
-      </Text>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen 
+          name="Feed" 
+          component={FeedScreen} 
+        />
 
-      <Text>
-        Welcome to your community
-      </Text>
-    </View>
+        <Stack.Screen 
+          name="Bulletin" 
+          component={BulletinScreen} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-  },
-});
