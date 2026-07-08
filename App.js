@@ -1,25 +1,49 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 
 import FeedScreen from './screens/FeedScreen';
 import BulletinScreen from './screens/BulletinScreen';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen 
+      <Tab.Navigator
+        screenOptions={{
+          tabBarActiveTintColor: 'green',
+          tabBarInactiveTintColor: 'grey',
+        }}
+      >
+        <Tab.Screen 
           name="Feed" 
-          component={FeedScreen} 
+          component={FeedScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons 
+                name="images" 
+                size={size} 
+                color={color} 
+              />
+            ),
+          }}
         />
 
-        <Stack.Screen 
+        <Tab.Screen 
           name="Bulletin" 
-          component={BulletinScreen} 
+          component={BulletinScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons 
+                name="pin" 
+                size={size} 
+                color={color} 
+              />
+            ),
+          }}
         />
-      </Stack.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
