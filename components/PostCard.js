@@ -3,51 +3,92 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function PostCard({ name, caption, time }) {
   return (
     <View style={styles.card}>
-      <Text style={styles.name}>
-        {name}
-      </Text>
 
-      <View style={styles.photoPlaceholder}>
+      <View style={styles.header}>
+        <View style={styles.avatar}>
+          <Text>
+            {name[0]}
+          </Text>
+        </View>
+
+        <Text style={styles.name}>
+          {name}
+        </Text>
+      </View>
+
+
+      <View style={styles.photo}>
         <Text>
           📸 Photo
         </Text>
       </View>
 
-      <Text>
+
+      <Text style={styles.caption}>
         {caption}
       </Text>
 
       <Text style={styles.time}>
         {time}
       </Text>
+
     </View>
   );
 }
 
+
 const styles = StyleSheet.create({
+
   card: {
-    padding: 15,
-    marginVertical: 10,
     width: '90%',
+    marginBottom: 20,
+    padding: 15,
+    borderRadius: 12,
     borderWidth: 1,
-    borderRadius: 10,
   },
+
+
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+
+
+  avatar: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 10,
+  },
+
 
   name: {
     fontWeight: 'bold',
     fontSize: 18,
   },
 
-  photoPlaceholder: {
-    height: 150,
+
+  photo: {
+    height: 200,
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 10,
     borderWidth: 1,
+    marginBottom: 12,
   },
 
+
+  caption: {
+    fontSize: 16,
+  },
+
+
   time: {
-    marginTop: 5,
+    marginTop: 8,
     fontSize: 12,
   },
+
 });

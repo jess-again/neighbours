@@ -4,7 +4,10 @@ import { posts } from '../data/posts';
 
 export default function FeedScreen() {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView 
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}
+    >
       <Text style={styles.title}>
         Neighbours 📸
       </Text>
@@ -25,6 +28,10 @@ export default function FeedScreen() {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 60,
+  },
+
+  contentContainer: {
+    alignItems: 'center',
   },
 
   title: {

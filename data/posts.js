@@ -17,4 +17,16 @@ export const posts = [
       caption: "Great picnic yesterday ☀️",
       time: "3 days ago",
     },
+    {
+        id: 4,
+        name: "Alex",
+        caption: "BBQ at mine this weekend 🔥",
+        time: "1 week ago",
+    },
+    {
+        id: 5,
+        name: "Emma",
+        caption: "Beach day was amazing 🌊",
+        time: "2 weeks ago",
+    },
   ];
